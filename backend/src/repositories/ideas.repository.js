@@ -17,9 +17,13 @@ export function listIdeas(roomId) {
   });
 }
 
-export function listAvailableIdeas(roomId) {
+export function listAvailableIdeas(roomId, letter) {
   return prisma.idea.findMany({
-    where: { roomId, used: false },
+    where: {
+      roomId,
+      used: false,
+      ...(letter ? { letter: letter.toUpperCase() } : {}),
+    },
   });
 }
 

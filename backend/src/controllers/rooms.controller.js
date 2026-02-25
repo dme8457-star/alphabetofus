@@ -50,7 +50,8 @@ export async function addIdea(req, res, next) {
 export async function spin(req, res, next) {
   try {
     const roomId = req.roomAuth.roomId;
-    const chosen = await spinService(roomId);
+    const { letter } = req.body || {};
+    const chosen = await spinService(roomId, letter);
 
     if (!chosen) return res.json({ message: "No ideas available" });
     res.json(chosen);

@@ -25,8 +25,9 @@ export async function addIdea({ letter, description }) {
   });
 }
 
-export async function spin() {
+export async function spin(letter) {
   return httpClient.request("/api/rooms/spin", {
-    method: "POST"
+    method: "POST",
+    body: { letter }
   });
 }

@@ -18,20 +18,29 @@ import { getToken, clearToken } from "./auth/tokenStorage";
 
 function HomeActionCard({ title, description, icon, buttonText, onClick, variant = "light" }) {
   return (
-    <Paper withBorder radius="lg" p="lg" shadow="xs">
+    <Paper
+      withBorder
+      radius="lg"
+      p="lg"
+      shadow="xs"
+      style={{
+        background: "linear-gradient(180deg, rgba(9,12,22,0.92), rgba(6,9,18,0.9))",
+        borderColor: "rgba(0,136,255,0.28)",
+      }}
+    >
       <Stack gap="sm">
         <ThemeIcon size={42} radius="md" variant={variant}>
           {icon}
         </ThemeIcon>
         <div>
-          <Text fw={700} size="lg">
+          <Text fw={700} size="lg" c="white">
             {title}
           </Text>
-          <Text c="dimmed" size="sm" mt={4}>
+          <Text c="rgba(234,241,255,0.78)" size="sm" mt={4}>
             {description}
           </Text>
         </div>
-        <Button onClick={onClick} radius="md">
+        <Button onClick={onClick} radius="md" color="blue" variant="light">
           {buttonText}
         </Button>
       </Stack>
@@ -74,7 +83,7 @@ export default function App() {
     >
       <Stack gap="md">
         <Group justify="space-between" align="center">
-          <Badge radius="sm" color="teal" variant="light" leftSection={<IconSparkles size={14} />}>
+          <Badge radius="sm" color="blue" variant="light" leftSection={<IconSparkles size={14} />}>
             Inicio rapido
           </Badge>
           <Text c="dimmed" size="sm">
@@ -89,6 +98,7 @@ export default function App() {
             icon={<IconPlus size={22} />}
             buttonText="Crear sala"
             onClick={() => setView("create")}
+            variant="filled"
           />
           <HomeActionCard
             title="Unirse a sala"

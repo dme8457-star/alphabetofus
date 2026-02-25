@@ -74,7 +74,16 @@ export default function IdeaForm({ onAdd, isLoading }) {
           </Group>
 
           {error ? (
-            <Alert color="red" variant="light" icon={<IconAlertCircle size={16} />}>
+            <Alert
+              color="red"
+              variant="light"
+              icon={<IconAlertCircle size={16} />}
+              styles={{
+                root: { background: "rgba(120, 14, 34, 0.28)", borderColor: "rgba(255, 99, 132, 0.28)" },
+                message: { color: "#fff" },
+                icon: { color: "#fff" },
+              }}
+            >
               {error}
             </Alert>
           ) : null}

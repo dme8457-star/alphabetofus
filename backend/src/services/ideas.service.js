@@ -29,9 +29,17 @@ export async function addIdeaService({ roomId, letter, description }) {
   });
 }
 
-export async function spinService(roomId) {
-  const available = await listAvailableIdeas(roomId);
+export async function spinService(roomId, letter) {
+  const normalizedLetter = String(letter || "").trim().toUpperCase();
+  if (!/^[A-Z]$/.test(normalizedLetter)) {
+    throw createHttpError(400, "Letter must be A-Z");
+  }
+
+  const available = await listAvailableIdeas(roomId, normalizedLetter);
   if (!available.length) return null;
+  if (available.length < 2) {
+    throw createHttpError(400, "Need at least 2 available ideas for this letter");
+  }
 
   const idx = Math.floor(Math.random() * available.length);
   const chosen = available[idx];

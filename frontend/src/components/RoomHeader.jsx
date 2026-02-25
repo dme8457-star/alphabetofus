@@ -11,7 +11,7 @@ export default function RoomHeader({ roomName, roomCode, onLogout }) {
     notifications.show({
       title: "código copiado",
       message: `${roomCode} copiado al portapapeles`,
-      color: "teal",
+      color: "blue",
     });
   }
 
@@ -23,11 +23,11 @@ export default function RoomHeader({ roomName, roomCode, onLogout }) {
             {roomName}
           </Text>
           <Group gap="xs">
-            <Badge color="teal" variant="light" radius="sm">
+            <Badge color="blue" variant="light" radius="sm">
               código: {roomCode}
             </Badge>
             <Tooltip label={clipboard.copied ? "Copiado" : "Copiar código"}>
-              <ActionIcon variant="subtle" color={clipboard.copied ? "teal" : "gray"} onClick={handleCopyCode}>
+              <ActionIcon variant="subtle" color={clipboard.copied ? "blue" : "gray"} onClick={handleCopyCode}>
                 {clipboard.copied ? <IconCheck size={16} /> : <IconCopy size={16} />}
               </ActionIcon>
             </Tooltip>

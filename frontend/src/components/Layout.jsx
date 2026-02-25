@@ -11,7 +11,7 @@ export default function Layout({ title, subtitle, children }) {
         style={{
           position: "relative",
           overflow: "hidden",
-          background: "linear-gradient(180deg, rgba(255,255,255,0.94), rgba(255,255,255,0.86))",
+          background: "linear-gradient(180deg, rgba(10,14,24,0.92), rgba(8,12,22,0.86))",
           backdropFilter: "blur(8px)",
         }}
       >
@@ -22,7 +22,7 @@ export default function Layout({ title, subtitle, children }) {
             inset: 0,
             pointerEvents: "none",
             background:
-              "radial-gradient(circle at 100% 0%, rgba(18,184,134,0.12), transparent 34%), radial-gradient(circle at 0% 100%, rgba(250,176,5,0.12), transparent 30%)",
+              "radial-gradient(circle at 100% 0%, rgba(0,136,255,0.18), transparent 34%), radial-gradient(circle at 0% 100%, rgba(66,245,255,0.12), transparent 32%)",
           }}
         />
 
@@ -32,7 +32,7 @@ export default function Layout({ title, subtitle, children }) {
               {title}
             </Title>
             {subtitle ? (
-              <Text c="dimmed" mt={6}>
+              <Text c="rgba(234,241,255,0.72)" mt={6}>
                 {subtitle}
               </Text>
             ) : null}
