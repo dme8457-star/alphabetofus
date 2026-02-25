@@ -1,0 +1,23 @@
+# Node
+node_modules/
+pnpm-lock.yaml
+
+# Build
+dist/
+build/
+
+# Prisma
+backend/generated/
+backend/prisma/migrations/*/migration_lock.toml
+
+# Env
+.env
+backend/.env
+frontend/.env
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
