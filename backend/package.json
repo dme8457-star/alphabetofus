@@ -6,7 +6,7 @@
   "type": "module",
  "scripts": {
     "build": "prisma generate",
-    "start": "node api/server.js"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
