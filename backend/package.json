@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "type": "module",
-  "scripts": {
-    "vercel-build": "pnpm exec prisma generate && pnpm exec prisma migrate deploy"
+ "scripts": {
+    "build": "prisma generate",
+    "start": "node api/index.js"
   },
   "keywords": [],
   "author": "",
